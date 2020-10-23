@@ -1,18 +1,7 @@
 {
-  "name": "frontend",
+  "name": "my-razzle-app",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "express": "^4.17.1",
-    "razzle": "^3.0.0",
-    "react-router-dom": "^5.1.2",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "3.4.4"
-  },
+  "license": "MIT",
   "scripts": {
     "start": "razzle start",
     "build": "razzle build",
@@ -20,9 +9,14 @@
     "start:prod": "NODE_ENV=production node build/server.js",
     "eb:prod": "npm run build && npm run start:prod"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "razzle": "^3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2"
+  }
+},
   
   "browserslist": {
     "production": [
