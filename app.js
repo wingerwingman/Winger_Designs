@@ -7,6 +7,6 @@ const app = express()
 app.use(express.static('./public'))
 
 app.get('/', (req, res, next) => {
-  res.send(path.join(__dirname + '/public/index.html'))
+  res.send(path.join(__dirname + './public/index.html'))
 }).listen(port)
 console.log('Server running at http://127.0.0.1:' + port + '/')
