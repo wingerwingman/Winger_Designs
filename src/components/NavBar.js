@@ -5,7 +5,8 @@ const NavBar = () => {
 
   return (
     <div className="navbar">
-      <NavLink  style={{ textDecoration: 'none' }} to="/">Welcome</NavLink>
+      <NavLink  style={{ textDecoration: 'none', color: 'blue' }} to="/">Home</NavLink>{' '}
+      <NavLink  style={{ textDecoration: 'none', color: 'blue' }} to="/projects">Projects</NavLink>
     </div>
   );
 };

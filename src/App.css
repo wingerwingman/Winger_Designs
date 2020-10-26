@@ -13,10 +13,15 @@
   align-items: center;
   background-color: grey;
   font-size: 2em;
-  font-family: 'Roboto', sans-serif;
-  text-decoration: none !important;
-  letter-spacing: .3em;
-  text-indent: .3em;
+  font-family: sans-serif;
+  letter-spacing: .1em;
+  display: block;
+  text-align: left;
+  
+}
+
+.header {
+  text-align: left;
 }
 
 .App {
