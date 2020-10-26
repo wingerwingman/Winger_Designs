@@ -1,3 +1,7 @@
+fieldset {
+  text-align: left;
+}
+
 .footer {
   margin-top: 1rem;
   padding: 1rem;
