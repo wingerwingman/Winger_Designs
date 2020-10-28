@@ -1,5 +1,5 @@
 fieldset {
-  text-align: left;
+  text-align: center;
 }
 
 .footer {
@@ -20,7 +20,7 @@ fieldset {
   font-family: sans-serif;
   letter-spacing: .1em;
   display: block;
-  text-align: left;
+  text-align: center;
   
 }
 

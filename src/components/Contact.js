@@ -12,6 +12,32 @@ export default class Contact extends Component {
         }
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+      
+        fetch('http://localhost:3002/send', {
+            method: "POST",
+            body: JSON.stringify(this.state),
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+          }).then(
+          (response) => (response.json())
+            ).then((response)=> {
+          if (response.status === 'success') {
+            alert("Message Sent."); 
+            this.resetForm()
+          } else if(response.status === 'fail') {
+            alert("Message failed to send.")
+          }
+        })
+    }
+
+    resetForm(){
+        this.setState({name: '', email: '', message: ''})
+    }
+
     render() {
         return (
             <div>
@@ -19,18 +45,18 @@ export default class Contact extends Component {
                 <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
                     <fieldset>
                     <div className="form-group">
-                        <label value={this.state.name} htmlFor="name">Name:<br/></label>
-                        <input type="text" className="form-control" />
+                        <label htmlFor="name">Name:<br/></label>
+                        <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)} />
                     </div>
                     <div className="form-group">
-                        <label value={this.state.email}htmlFor="exampleInputEmail1">Email address:<br/></label>
-                        <input type="email" className="form-control" aria-describedby="emailHelp" />
+                        <label htmlFor="exampleInputEmail1">Email address:<br/></label>
+                        <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
                     </div>
                     <div className="form-group">
-                        <label value={this.state.message} htmlFor="message">Message:<br/></label>
-                        <textarea className="form-control" rows="5"></textarea>
+                        <label htmlFor="message">Message:<br/></label>
+                        <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
                     </div>
-                        <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary">Submit</button>
                     </fieldset>
                 </form>
                 
@@ -50,10 +76,4 @@ export default class Contact extends Component {
         this.setState({message: event.target.value})
     }
     
-    handleSubmit(event) {
-          debugger;
-        event.preventDefault();
-        console.log(this.state);
-    }
-
 }
